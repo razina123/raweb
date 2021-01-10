@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cours;
+use App\Models\cours;
 use Illuminate\Http\Request;
 
 class CoursController extends Controller
 {
     public function index()
     {
-        return response()->json(Cours::all());
+        return response()->json(cours::all());
     }
 
     public function create(Request $request)
     {
-        $cours = new Cours();
+        $cours = new cours();
         $cours->titre = $request->titre;
         $cours->description = $request->description;
         $cours->niveau = $request->niveau;
@@ -32,21 +32,21 @@ class CoursController extends Controller
     }
     public function getCours(Request $request)
     {
-        $cours = Cours::find($request->id);
+        $cours = cours::find($request->id);
         if ($cours) return response()->json($cours, 200);
         return response()->json(['message' => 'cours not found'], 404);
     }
     public function delCours(Request $request)
     {
-        $cours = Cours::find($request->id);
+        $cours = cours::find($request->id);
         if ($cours) {
-            Cours::destroy($request->id);
+            cours::destroy($request->id);
             return response()->json(['message' => 'cours deleted'], 200);
         } else return response()->json(['message' => 'cours to delete not found'], 400);
     }
     public function sakeCours(Request $request)
     {
-        $cours = Cours::find($request->id);
+        $cours = cours::find($request->id);
         if ($cours) {
             $cours->titre = $request->titre;
             $cours->description = $request->description;
