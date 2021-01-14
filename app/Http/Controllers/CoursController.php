@@ -17,13 +17,10 @@ class CoursController extends Controller
         $cours = new cours();
         $cours->titre = $request->titre;
         $cours->description = $request->description;
-        $cours->niveau = $request->niveau;
-        $cours->duree = $request->duree;
-        $cours->document = $request->document;
-        $cours->categorie = $request->categorie;
-        $cours->difficulte = $request->difficulte;
-        $cours->objectif = $request->objectif;
-        $cours->prerequis = $request->prerequis;
+       // $cours->categorie = $request->categorie;
+        //$cours->difficulte = $request->difficulte;
+       // $cours->objectif = $request->objectif;
+        //$cours->prerequis = $request->prerequis;
         $cours->image_cours = $request->image_cours;
         $cours->professeur_id = $request->professeur_id;
         $cours->save();
@@ -49,14 +46,10 @@ class CoursController extends Controller
         $cours = cours::find($request->id);
         if ($cours) {
             $cours->titre = $request->titre;
-            $cours->description = $request->description;
+            //$cours->description = $request->description;
             $cours->niveau = $request->niveau;
             $cours->duree = $request->duree;
             $cours->document = $request->document;
-            $cours->categorie = $request->categorie;
-            $cours->difficulte = $request->difficulte;
-            $cours->objectif = $request->objectif;
-            $cours->prerequis = $request->prerequis;
             $cours->image_cours = $request->image_cours;
             $cours->professeur_id = $request->professeur_id;
             $cours->save();
