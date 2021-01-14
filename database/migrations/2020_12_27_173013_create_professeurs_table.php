@@ -18,10 +18,9 @@ class CreateProfesseursTable extends Migration
             $table->string("grade")->default("");
             $table->integer("nbr_cours")->default(0);
             $table->timestamps();
-            $table->varchar("name");
-            $table->varchar("email");
-            $table->varchar("password");
-
+            $table->string("name");
+            $table->string("email");
+            $table->string("password");
         });
     }
 
